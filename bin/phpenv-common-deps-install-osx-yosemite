@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# test if Homebrew is installed
+if ! command -v brew 1>/dev/null; then
+    echo "WARNING:"
+    echo "|  Homebrew (http://brew.io) was not detected in your system."
+    echo "|  Install it before trying to re-run \`phpenv common-deps-install-osx-yosemite\`"
+    exit 1
+fi
+
+brew tap homebrew/versions
+brew install git vim curl wget re2c libjpeg libpng libmcrypt autoconf bison
+brew link bison --force

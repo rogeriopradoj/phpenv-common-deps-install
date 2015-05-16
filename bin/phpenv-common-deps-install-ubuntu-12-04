@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+sudo apt-get update
+sudo apt-get -y build-dep php5-cli
+sudo apt-get install -y git-core vim curl wget libmcrypt-dev libjpeg-dev libreadline-dev

@@ -1,0 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.define "x86" do |x86|
+    x86.vm.box = "ubuntu/trusty32"
+
+    x86.vm.network "private_network", ip: "10.14.04.32"
+  end
+
+  config.vm.define "x64" do |x64|
+    x64.vm.box = "ubuntu/trusty64"
+
+    x64.vm.network "private_network", ip: "10.14.04.64"
+
+    x64.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+    end
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update
+    sudo apt-get install -y git-core vim curl
+  SHELL
+
+end

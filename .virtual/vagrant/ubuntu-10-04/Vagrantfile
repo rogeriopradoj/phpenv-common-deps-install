@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.define "x86" do |x86|
+    x86.vm.box = "lucid32"
+    x86.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+
+    x86.vm.network "private_network", ip: "10.10.04.32"
+  end
+
+  config.vm.define "x64" do |x64|
+    x64.vm.box = "lucid64"
+    x64.vm.box_url = "http://files.vagrantup.com/lucid64.box"
+
+    x64.vm.network "private_network", ip: "10.10.04.64"
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update
+    sudo apt-get install -y git-core vim curl
+  SHELL
+
+end
