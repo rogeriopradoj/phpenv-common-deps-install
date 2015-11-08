@@ -9,5 +9,5 @@ if ! command -v brew 1>/dev/null; then
 fi
 
 brew tap homebrew/versions
-brew install git vim curl wget re2c libjpeg libpng libmcrypt autoconf bison
-brew link bison --force
+brew install git vim curl wget re2c libjpeg libpng libmcrypt autoconf bison27
+brew link bison27 --force
