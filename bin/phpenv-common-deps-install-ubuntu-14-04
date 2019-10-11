@@ -3,4 +3,4 @@ sudo apt-get update
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password myPassWord'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password myPassWord'
 sudo apt-get -y build-dep php5-cli
-sudo apt-get install -y git-core vim curl wget libmcrypt-dev libjpeg-dev libreadline-dev
+sudo apt-get install -y git-core vim curl wget libmcrypt-dev libjpeg-dev libreadline-dev gcc
